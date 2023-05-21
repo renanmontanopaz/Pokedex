@@ -1,5 +1,5 @@
 
-section{
+.section{
     height: calc(100vh - 93px);
     width: 100%;
     background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%);

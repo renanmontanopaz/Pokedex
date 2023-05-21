@@ -2,7 +2,7 @@ import styles from './index.module.css'
 import banner from '../../assets/BannerComplete.png'
 export const Home = ()=>{
     return (
-        <section >
+        <section className={styles.section}>
             <div className={styles.container}>
                 <div className={styles.containers}>
                     <h1><strong>Find</strong> all your favorite <strong>Pokemon</strong></h1>
