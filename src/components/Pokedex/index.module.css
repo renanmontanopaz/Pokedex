@@ -1,0 +1,22 @@
+.section{
+    background: white;
+    width: 100vh;
+    height: calc(100vh - 93px);
+}
+.container{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 15%;
+}
+.h1{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 53px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 3px;
+}

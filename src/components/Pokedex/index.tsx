@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import api from "../../services/api.ts";
 import {Pokemon, Request} from "../../models/Pokemon.ts";
-
+import styles from './index.module.css';
 
 export const Pokedex = () =>{
 
@@ -35,8 +35,13 @@ export const Pokedex = () =>{
         }
     }
 
-    return
-    <section>
 
-    </section>
+
+    return (
+        <section className={styles.section}>
+            <div className={styles.container}>
+                <h1 className={styles.h1}>800 <strong>Pokemons</strong> for you to choose your favorite</h1>
+            </div>
+        </section>
+    )
 }
