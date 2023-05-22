@@ -6,16 +6,16 @@ import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import {
-    Box,
+    Avatar,
+    Box, Card, CardContent, CardMedia,
     Checkbox,
-    Container,
-    FormControl,
+    FormControl, Grid,
     InputLabel,
     ListItemText,
     MenuItem,
-    OutlinedInput,
+    OutlinedInput, Paper,
     Select,
-    SelectChangeEvent
+    SelectChangeEvent, Typography
 } from "@mui/material";
 import * as React from 'react';
 
@@ -25,16 +25,19 @@ export const Pokedex = () =>{
 
     useEffect(() =>{
         async function getAllPokemons(){
-            const response = await api.get('')
+            const response = await api.get('/?limit=20&offset=20')
             const {results} = response.data;
             const payloadPokemons = await Promise.all(
                 results.map(async (pokemon: Pokemon) => {
-                    const {id, types} = await getMoreInfo(pokemon.url)
+                    const {id, types, image, attack, defense} = await getMoreInfo(pokemon.url)
 
                     return {
                         name: pokemon.name,
                         id,
-                        types
+                        types,
+                        image,
+                        attack,
+                        defense
                     }
                 })
             )
@@ -48,7 +51,11 @@ export const Pokedex = () =>{
         const response = await api.get(url)
         const {id, types} = response.data;
         return{
-            id,types
+            id,
+            types,
+            image: response.data.sprites.other.home.front_default,
+            attack: response.data.stats[1].base_stat,
+            defense: response.data.stats[2].base_stat
         }
     }
 
@@ -178,6 +185,30 @@ export const Pokedex = () =>{
                     </Select>
                 </FormControl>
                 </Box>
+                <Grid container spacing={{ xs: 1, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                    {pokemons.map((pokemon) =>(
+                        <Grid xs={3} sm={4} md={4} key={pokemon.id}>
+                            <Card className={styles.grid} sx={{ maxWidth: 450, flexDirection: 'row', display: 'flex'}}>
+                                <Box key={pokemon.id} sx={{ display: 'flex', flexDirection: 'column'}}>
+                                    <CardContent sx={{ flex: '1 0 auto' }}>
+                                        <Typography key={pokemon.name} component="div" variant="h5">{pokemon.name}</Typography>
+                                        <Box sx={{display: 'flex', flexDirection: 'row'}}>
+                                            <Box  sx={{ '& > :not(style)': {m: 1, width: 25, height: 25, alignItems: 'center', flexDirection: 'column'},}}>
+                                                <Avatar key={pokemon.attack} sx={{ color: 'black', bgcolor: 'orange', border: 'black', fontSize: 15}}>{pokemon.attack}</Avatar>
+                                                <p className={styles.paragraph}>Attack</p>
+                                            </Box>
+                                            <Box sx={{'& > :not(style)': {m: 1, width: 25, height: 25, alignItems: 'center', flexDirection: 'center'},}}>
+                                                <Avatar key={pokemon.defense} sx={{ color: 'black', bgcolor: '#448aff', border: 'black', fontSize: 15}}>{pokemon.defense}</Avatar>
+                                                <p className={styles.paragraph}>Defense</p>
+                                            </Box>
+                                        </Box>
+                                    </CardContent>
+                                </Box>
+                                <CardMedia component="img" sx={{ width: 151}} image={pokemon.image}></CardMedia>
+                            </Card>
+                        </Grid>
+                    ))}
+                </Grid>
             </div>
         </section>
     )

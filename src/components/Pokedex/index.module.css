@@ -1,10 +1,11 @@
 .section{
     background: white;
     height: calc(100vh - 93px);
-
+    justify-content: center;
+    display: flex;
 }
 .container{
-    width: 100%;
+    width: 80%;
     align-items: center;
     justify-content: space-between;
     display: flex;
@@ -20,4 +21,13 @@
 
     text-align: center;
     letter-spacing: 3px;
+}
+
+.paragraph{
+    font-size: 10px;
+
+}
+
+.grid{
+    filter: drop-shadow(4px 4px 4px rgba(33, 33, 33, 0.1));
 }
