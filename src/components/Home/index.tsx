@@ -1,6 +1,6 @@
 import styles from './index.module.css'
 import banner from '../../assets/BannerComplete.png'
-export const Home = ()=>{
+export const HomePokedex = ()=>{
     return (
         <section className={styles.section}>
             <div className={styles.container}>

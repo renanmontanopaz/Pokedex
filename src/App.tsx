@@ -1,15 +1,11 @@
-import {Header} from "./components/Header";
-import {Home} from "./components/Home";
-import {Pokedex} from "./components/Pokedex";
+import {Outlet} from "react-router-dom";
 
 function App() {
 
 
   return (
     <>
-      <Header/>
-        <Home/>
-        <Pokedex/>
+      <Outlet/>
     </>
   )
 }
