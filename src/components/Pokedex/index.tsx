@@ -124,47 +124,7 @@ export const Pokedex = () =>{
                 <h1 className={styles.h1}>800 <strong>Pokemons</strong> for you to choose your favorite</h1>
                 <SearchPokemon/>
                 <Box >
-                <FormControl sx={{ m: 1, width: 200 }}>
-                    <InputLabel id="demo-multiple-checkbox-label">Tipo</InputLabel>
-                    <Select
-                        labelId="demo-multiple-checkbox-label"
-                        id="demo-multiple-checkbox"
-                        multiple
-                        value={personName}
-                        onChange={handleChange}
-                        input={<OutlinedInput label="Tag" />}
-                        renderValue={(selected) => selected.join('type')}
-                        MenuProps={MenuProps}
-                    >
-                        {pokemons.map((name) => (
-                            <MenuItem key={name.id} value={name.types.map((tipo) => tipo.type)}>
-                                <Checkbox checked={personName.indexOf(name.name) > -1} />
-                                <ListItemText primary={name.name} />
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
-                <FormControl sx={{ m: 1, width: 200 }}>
-                    <InputLabel id="demo-multiple-checkbox-label">Tipo</InputLabel>
-                    <Select
-                        labelId="demo-multiple-checkbox-label"
-                        id="demo-multiple-checkbox"
-                        multiple
-                        value={personName}
-                        onChange={handleChange}
-                        input={<OutlinedInput label="Tag" />}
-                        renderValue={(selected) => selected.join('type')}
-                        MenuProps={MenuProps}
-                    >
-                        {pokemons.map((name) => (
-                            <MenuItem key={name.id} value={name.types.map((tipo) => tipo.type)}>
-                                <Checkbox checked={personName.indexOf(name.name) > -1} />
-                                <ListItemText primary={name.name} />
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
-                <FormControl sx={{ m: 1, width: 200 }}>
+                <FormControl sx={{ m: 1, width: 200, boxShadow: '2px 2px 2px rgba(33, 33, 33, 0.1)', borderRadius: 4, border: 'none' }}>
                     <InputLabel id="demo-multiple-checkbox-label">Tipo</InputLabel>
                     <Select
                         labelId="demo-multiple-checkbox-label"
@@ -185,10 +145,10 @@ export const Pokedex = () =>{
                     </Select>
                 </FormControl>
                 </Box>
-                <Grid container spacing={{ xs: 1, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                <Grid container spacing={{ xs: 6, md: 6 }} columns={{ xs: 6, sm: 8, md: 12 }} sx={{ gap: 3, display: 'flex', justifyContent: 'center' }}>
                     {pokemons.map((pokemon) =>(
-                        <Grid xs={3} sm={4} md={4} key={pokemon.id}>
-                            <Card className={styles.grid} sx={{ maxWidth: 450, flexDirection: 'row', display: 'flex'}}>
+                        <Grid xs={3} sm={3} md={3} key={pokemon.id} >
+                            <Card className={styles.grid} sx={{ maxWidth: 400, minWidth: 320, flexDirection: 'row', display: 'flex'}}>
                                 <Box key={pokemon.id} sx={{ display: 'flex', flexDirection: 'column'}}>
                                     <CardContent sx={{ flex: '1 0 auto' }}>
                                         <Typography key={pokemon.name} component="div" variant="h5">{pokemon.name}</Typography>
@@ -204,7 +164,7 @@ export const Pokedex = () =>{
                                         </Box>
                                     </CardContent>
                                 </Box>
-                                <CardMedia component="img" sx={{ width: 151}} image={pokemon.image}></CardMedia>
+                                    <img className={styles.image} src={pokemon.image}></img>
                             </Card>
                         </Grid>
                     ))}

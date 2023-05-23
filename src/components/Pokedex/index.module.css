@@ -30,4 +30,10 @@
 
 .grid{
     filter: drop-shadow(4px 4px 4px rgba(33, 33, 33, 0.1));
+    justify-content: space-between;
+}
+
+.image{
+    width: 171px;
+    height: 150px;
 }
