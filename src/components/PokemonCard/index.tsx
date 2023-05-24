@@ -2,8 +2,8 @@ import {useEffect} from "react";
 import api from "../../services/api.ts";
 import {Pokemon, Request} from "../../models/Pokemon.ts";
 import usePokemonContext from "../../hooks";
+import styles from "../PokemonCard/index.module.css";
 import {Avatar, Box, Card, CardContent, Grid, Typography} from "@mui/material";
-import styles from "../Pokedex/index.module.css";
 
 
 export const CardPokemon = () => {
@@ -27,11 +27,12 @@ export const CardPokemon = () => {
                     }
                 })
             )
-            console.log(payloadPokemons);
+            //console.log(payloadPokemons);
             setPokemonState(payloadPokemons);
+            console.log(pokemonState)
         }
-        getAllPokemons()
-    },[setPokemonState])
+        getAllPokemons();
+    },[])
 
     async function getMoreInfo(url: string): Promise<Request>{
         const response = await api.get(url)
@@ -44,6 +45,8 @@ export const CardPokemon = () => {
             defense: response.data.stats[2].base_stat
         }
     }
+    console.log(pokemonState)
+
     return (
         <Grid container spacing={{ xs: 6, md: 6 }} columns={{ xs: 6, sm: 8, md: 12 }} sx={{ gap: 3, display: 'flex', justifyContent: 'center' }}>
             {pokemonState.map((pokemon) =>(
@@ -61,6 +64,10 @@ export const CardPokemon = () => {
                                         <Avatar key={pokemon.defense} sx={{ color: 'black', bgcolor: '#448aff', border: 'black', fontSize: 15}}>{pokemon.defense}</Avatar>
                                         <p className={styles.paragraph}>Defense</p>
                                     </Box>
+                                </Box>
+                                <Box className={styles.card_type}>
+                                    <div className={styles.card_type_value}>{pokemon.types[0].type.name}</div>
+                                    <div className={styles.card_type_value_right}>{pokemon.types.length == 2 ? pokemon.types[1].type.name : pokemon.types[0].type.name}</div>
                                 </Box>
                             </CardContent>
                         </Box>

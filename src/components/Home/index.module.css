@@ -23,7 +23,7 @@ button{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 10%;
+    margin-left: 200px;
 }
 
 .containers{

@@ -107,7 +107,9 @@ export const Pokedex = () =>{
                     </Select>
                 </FormControl>
                 </Box>
-                <CardPokemon/>
+                <>
+                    <CardPokemon/>
+                </>
             </div>
         </section>
     )
