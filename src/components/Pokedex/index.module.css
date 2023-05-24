@@ -44,3 +44,12 @@
     justify-content: center;
     flex-direction: column;
 }
+.search{
+    width: 100%;
+    background: #F2F2F2;
+    border: none;
+    box-shadow: 4px 4px 16px rgba(1, 28, 64, 0.2);
+    border-radius: 40px;
+    display: flex;
+    margin-bottom: 30px;
+}

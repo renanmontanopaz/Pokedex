@@ -1,9 +1,12 @@
-type PokemonType = {
-    type: string
+export type PokemonType = {
+    type: {
+        name: string
+    }
 }
 
+
 export type Request = {
-    id: number;
+    id: number
     types: PokemonType[]
     image: string
     attack: number
