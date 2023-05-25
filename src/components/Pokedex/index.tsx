@@ -2,7 +2,6 @@ import styles from './index.module.css';
 import usePokemonContext from "../../hooks/Pokemon";
 import {CardPokemon} from "../PokemonCard";
 import { useState} from "react";
-import {ModalContextProvider} from "../../contexts/Modal";
 
 export const Pokedex = () =>{
 
@@ -23,9 +22,7 @@ export const Pokedex = () =>{
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}/>
                 <>
-                    <ModalContextProvider>
-                        <CardPokemon pokemon={filterPokemon}/>
-                    </ModalContextProvider>
+                    <CardPokemon pokemon={filterPokemon}/>
                 </>
             </div>
 
