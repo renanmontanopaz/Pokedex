@@ -1,11 +1,8 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import api from "../../services/api.ts";
 import {Pokemon, Request} from "../../models/Pokemon.ts";
 import usePokemonContext from "../../hooks/Pokemon";
 import styles from "../PokemonCard/index.module.css";
-import useModalContext from "../../hooks/Modal";
-import {ModalPokemon} from "../Modal";
-
 type CardPokemonProps = {
     pokemon:Pokemon[];
 }
@@ -13,9 +10,6 @@ export const CardPokemon: React.FC<CardPokemonProps> = ({ pokemon }) => {
 
     const {pokemonState, setPokemonState} = usePokemonContext();
     //const countcard = 9;
-
-    const [search, setSearch] = useState<string>("");
-    const {setPokemonModalState, setOpenModalState, openModalState} = useModalContext()
 
     useEffect(() =>{
         async function getAllPokemons(){
@@ -53,13 +47,7 @@ export const CardPokemon: React.FC<CardPokemonProps> = ({ pokemon }) => {
         }
     }
 
-    const handleClick = (value: string) => {
-        setSearch(value);
-        const pokemonModal = pokemonState.filter((poke) => poke.name.toLowerCase().includes(search.toLowerCase()));
-        setPokemonModalState(pokemonModal);
-        setOpenModalState(true)
-        console.log(openModalState)
-    }
+
 
     function CardsPokemon (){
         type PokemonType = 'stile' | 'dark' | 'rock' | 'grass' | 'bug' | 'ice' | 'water' | 'fire' | 'fighting' | 'dragon' | 'normal' | 'gosth' | 'poison' | 'psychic' | 'fairy' | 'ghost' | 'ground' | 'electric';
@@ -91,7 +79,7 @@ export const CardPokemon: React.FC<CardPokemonProps> = ({ pokemon }) => {
 
             <div className={styles.conteiner_Pokemon_Card}>
                 {pokemon.map((poke) => (
-                    <article key={poke.id} className={styles.conteiner_card} onClick={() => handleClick(poke.name)}>
+                    <article key={poke.id} className={styles.conteiner_card} >
                         <article className={styles.conteiner_card_left}>
                                 <h1 className={styles.card_name}>{poke.name}</h1>
                             <article className={styles.card_divs}>
@@ -119,7 +107,6 @@ export const CardPokemon: React.FC<CardPokemonProps> = ({ pokemon }) => {
     return (
         <>
         <CardsPokemon/>
-        <ModalPokemon/>
             </>
     )
 }
