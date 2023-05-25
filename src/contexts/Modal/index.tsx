@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, {  useState } from 'react';
 import { Pokemon } from '../../models/Pokemon.ts'
 
 type ModalContextProviderProps = {
@@ -8,7 +8,7 @@ type ModalContextProviderProps = {
 
 
 export type ModalContextProps = {
-    pokemonModalState: Pokemon[],
+    pokemonModalState: Pokemon | null,
     setPokemonModalState: React.Dispatch<React.SetStateAction<Pokemon[]>>,
     openModalState: boolean,
     setOpenModalState: React.Dispatch<React.SetStateAction<boolean>>,

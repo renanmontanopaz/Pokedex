@@ -1,4 +1,3 @@
-
 import styles from './index.module.css';
 import usePokemonContext from "../../hooks/Pokemon";
 import {CardPokemon} from "../PokemonCard";
@@ -15,6 +14,7 @@ export const Pokedex = () =>{
         const handleCLick = (value: string) => {
             setSearch(value);
             setPokemonState(pokemonState.filter((poke) => poke.name.toLowerCase().includes(search.toLowerCase())));
+            console.log(pokemonState);
         }
     return (
         <section className={styles.section}>
