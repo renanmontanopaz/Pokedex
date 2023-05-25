@@ -1,4 +1,6 @@
 Pokedex
+
+<img src="https://github.com/renanmontanopaz/Pokedex/blob/main/Captura%20de%20tela%20de%202023-05-25%2018-16-28.png">
 NPM 
 Sobre o projeto 
 https://pokedex-renan-montano.netlify.app/
