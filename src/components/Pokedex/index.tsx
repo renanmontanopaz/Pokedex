@@ -6,16 +6,11 @@ import {ModalContextProvider} from "../../contexts/Modal";
 
 export const Pokedex = () =>{
 
-    const {pokemonState, setPokemonState} = usePokemonContext();
+    const {pokemonState} = usePokemonContext();
     const [search, setSearch] = useState<string>("");
 
+    const filterPokemon = pokemonState.filter((poke) => poke.name.toLowerCase().includes(search.toLowerCase()));
 
-
-        const handleCLick = (value: string) => {
-            setSearch(value);
-            setPokemonState(pokemonState.filter((poke) => poke.name.toLowerCase().includes(search.toLowerCase())));
-            console.log(pokemonState);
-        }
     return (
         <section className={styles.section}>
             <div className={styles.container}>
@@ -26,10 +21,10 @@ export const Pokedex = () =>{
                     placeholder='Encuentra tu pokémon...'
                     className={styles.search}
                     value={search}
-                    onChange={(e) => handleCLick(e.target.value)}/>
+                    onChange={(e) => setSearch(e.target.value)}/>
                 <>
                     <ModalContextProvider>
-                    <CardPokemon />
+                        <CardPokemon pokemon={filterPokemon}/>
                     </ModalContextProvider>
                 </>
             </div>

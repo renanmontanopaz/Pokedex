@@ -6,7 +6,10 @@ import styles from "../PokemonCard/index.module.css";
 import useModalContext from "../../hooks/Modal";
 import {ModalPokemon} from "../Modal";
 
-export const CardPokemon = () => {
+type CardPokemonProps = {
+    pokemon:Pokemon[];
+}
+export const CardPokemon: React.FC<CardPokemonProps> = ({ pokemon }) => {
 
     const {pokemonState, setPokemonState} = usePokemonContext();
     //const countcard = 9;
@@ -16,7 +19,7 @@ export const CardPokemon = () => {
 
     useEffect(() =>{
         async function getAllPokemons(){
-            const response = await api.get('/?limit=20&offset=20')
+            const response = await api.get('/?limit=100')
             const {results} = response.data;
             const payloadPokemons = await Promise.all(
                 results.map(async (pokemon: Pokemon) => {
@@ -87,7 +90,7 @@ export const CardPokemon = () => {
         return (
 
             <div className={styles.conteiner_Pokemon_Card}>
-                {pokemonState.map((poke) => (
+                {pokemon.map((poke) => (
                     <article key={poke.id} className={styles.conteiner_card} onClick={() => handleClick(poke.name)}>
                         <article className={styles.conteiner_card_left}>
                                 <h1 className={styles.card_name}>{poke.name}</h1>
