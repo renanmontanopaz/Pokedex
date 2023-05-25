@@ -1,0 +1,214 @@
+.conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: linear-gradient(180deg, #732119 42.19%, #D93E30 100%);
+    border-radius: 16px;
+}
+
+.conteiner_left {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50%;
+    height: 100%;
+
+    box-shadow: 4px 4px 8px rgba(1, 28, 64, 0.2);
+    border-radius: 0px 8px 8px 0px;
+}
+img{
+    width: 100%;
+    height: 304px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.conteiner_right {
+    width: 62%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 4px 4px 8px rgba(1, 28, 64, 0.2);
+}
+
+.conteiner_right_name_id {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.conteiner_right_name_id h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #FDFDFD;
+
+    text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+
+}
+
+.conteiner_right_name_id p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+
+    margin-left: 100px;
+
+    color: #FDFDFD;
+}
+
+.conteiner_right_name_id span {
+    height: 41px;
+    width: 41px;
+
+    border-radius: 25px;
+
+    background: #F2CB07;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 15px;
+}
+
+.conteiner_right_name_id img {
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    left: 100%;
+    bottom: 100%;
+}
+
+.conteiner_right_abilites {
+    width: 224px;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 137px;
+    padding-inline-start: 25px;
+
+    background: #FDFDFD;
+    box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+    border-radius: 8px;
+}
+
+.conteiner_right_abilites h2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
+}
+
+.conteiner_right_heal_experience {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+
+    width: 401px;
+    height: 80px;
+
+    margin-top: 20px;
+
+    background: #FDFDFD;
+    box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+    border-radius: 8px;
+}
+
+.conteiner_right_heal_experience_content {
+    margin-right: 40px;
+}
+
+
+.conteiner_right_heal_experience_content_h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
+}
+
+.conteiner_right_heal_experience_content_h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
+}
+
+.conteiner_right_heal_experience_content_div {
+    width: 137px;
+    height: 5px;
+    background: linear-gradient(270deg, #64D368 0.15%, #64D368 70.88%);
+    border-radius: 8px;
+}
+
+.conteiner_right_heal_experience_content_div1 {
+    width: 137px;
+    height: 5px;
+    background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%);
+    border-radius: 8px;
+}
+
+.conteiner_right_atribute {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 20px;
+    gap: 25px;
+}
+
+.conteiner_right_atribute_values {
+    width: 82px;
+    height: 70px;
+
+    background: #FDFDFD;
+
+    box-shadow: 4px 4px 24px rgba(1, 17, 38, 0.2);
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.conteiner_right_atribute_values_div {
+    width: 35px;
+    height: 36px;
+
+    border: 3px solid #212121;
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 5px;
+}
