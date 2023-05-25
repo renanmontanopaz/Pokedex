@@ -11,8 +11,8 @@ export const Header = ()=>{
                 <div className={styles.menuItens}>
                     <NavLink to={`/`} className={({ isActive }) => (isActive ? styles.active : styles.inactive)}>Home</NavLink>
                     <NavLink to={`/Pokedex`} className={({ isActive }) => (isActive ? styles.active : styles.inactive)}>Pokédex</NavLink>
-                    <NavLink to={`/`} className={({ isActive }) => (isActive ? styles.active : styles.inactive)}>Lendários</NavLink>
-                    <NavLink to={`/`} className={({ isActive }) => (isActive ? styles.active : styles.inactive)}>Documentation</NavLink>
+                    <a href="#" >Lengendaries</a>
+                    <a href="https://pokeapi.co/docs/v2" >Documentation</a>
                 </div>
             </div>
         </header>

@@ -40,3 +40,16 @@ a {
 a:hover{
     border-bottom:2px solid #212121;
 }
+
+.active {
+    font-weight: 500;
+    font-size: 25px;
+    color: var(--Paragraph);
+    border-bottom: 3px solid var(--Paragraph); }
+.inactive {
+    font-weight: 500;
+    font-size: 25px;color: var(--Paragraph);
+}
+.inactive:hover {
+    cursor: pointer;
+}
