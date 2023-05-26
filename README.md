@@ -3,10 +3,11 @@ Pokedex
 <img src="https://github.com/renanmontanopaz/Pokedex/blob/main/Captura%20de%20tela%20de%202023-05-25%2018-16-28.png">
 </br>
 </br>
-NPM 
-Sobre o projeto 
+
+# Sobre o projeto 
 https://pokedex-renan-montano.netlify.app/
-POkedex é uma aplicação FRONT-END em React construída durante o período da faculdade.
+</br>
+Pokedex é uma aplicação FRONT-END em React construída durante o período da faculdade.
 A aplicação consiste em um site que lista os pokemons, consumindo API, nela tem um input para pesquisar o pokemon, conforme digita na busca, vai aparecendo o pokemon.
 
 # Tecnologias utilizadas
